@@ -1,8 +1,8 @@
 
 import ContactItem from './ContactTemplate'
 
-
-export default function ContactList({ contacts }) {
+// ({ contacts, onDeleteContact })
+export default function ContactList({ contacts , onDeleteContact }) {
     return (
         <ul> {
             contacts.map(({ id, name, number }) => (
@@ -11,9 +11,11 @@ export default function ContactList({ contacts }) {
                     id={id}
                     name={name}
                     number={number}
+                    onDeleteContact={onDeleteContact}
                 />
             ))
         }
+       
             </ul> 
     );
 };
