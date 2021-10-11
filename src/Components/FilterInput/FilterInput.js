@@ -1,4 +1,6 @@
 import shortid from "shortid";
+import PropTypes from 'prop-types';
+import f from './Filter.module.css';
 
 export default function Filter({ value, onChange }) {
     const filteredID = shortid.generate();
@@ -9,6 +11,7 @@ export default function Filter({ value, onChange }) {
                     id={filteredID}
                     value={value}
                     onChange={onChange}
+                    className={f.filter__input}
                 
                 />
             
@@ -16,3 +19,8 @@ export default function Filter({ value, onChange }) {
         </>
     );
 };
+
+Filter.propTypes = {
+    value: PropTypes.string,
+    onchange: PropTypes.func,
+}

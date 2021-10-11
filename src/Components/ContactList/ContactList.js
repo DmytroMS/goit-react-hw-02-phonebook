@@ -1,10 +1,12 @@
 
 import ContactItem from './ContactTemplate'
+import PropTypes from 'prop-types';
+import s from './ContactList.module.css';
 
-// ({ contacts, onDeleteContact })
+
 export default function ContactList({ contacts , onDeleteContact }) {
     return (
-        <ul> {
+        <ul > {
             contacts.map(({ id, name, number }) => (
                 <ContactItem
                     key={id}
@@ -20,5 +22,7 @@ export default function ContactList({ contacts , onDeleteContact }) {
     );
 };
 
-
+ContactList.propTypes = {
+    contacts: PropTypes.array,
+}
  

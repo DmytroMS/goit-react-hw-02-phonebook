@@ -1,6 +1,6 @@
 import react, { Component } from "react";
 import shortid from 'shortid';
-
+import f from './Contacts.module.css';
 class InputForm extends Component {
     state = {
         name: '',
@@ -29,10 +29,11 @@ handleSubmit = e => {
 
     render() {
         return (
-              <form onSubmit={this.handleSubmit} >
-          <label htmlFor={this.nameInputId}>
+          <div className={f.forma}>
+          <form onSubmit={this.handleSubmit} >
+          <label className={f.forma__label} htmlFor={this.nameInputId}>
             NAME
-            <input
+            <input className={f.forma__input}
               type="text"
               name="name"
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -44,9 +45,9 @@ handleSubmit = e => {
             />
           </label>
 
-          <label htmlFor={this.numberInputId} >
+          <label className={f.forma__label} htmlFor={this.numberInputId} >
             NUMBER
-            <input
+            <input className={f.forma__input}
               type="tel"
               name="number"
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -58,8 +59,9 @@ handleSubmit = e => {
             />
           </label>
 
-          <button type="submit">Add Contact</button>
+          <button className={f.forma__btn} type="submit">Add Contact</button>
         </form>
+</div>
         )
     };
 };
